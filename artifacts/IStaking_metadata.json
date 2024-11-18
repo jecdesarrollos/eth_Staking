@@ -1,0 +1,274 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "InvalidDuration",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NoStakeFound",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "StakeNotMature",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "OwnerDeposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardsClaimed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					}
+				],
+				"name": "Staked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Unstaked",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "claimReward",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "getStaker",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerDeposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_duration",
+						"type": "uint256"
+					}
+				],
+				"name": "stake",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unStake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"claimReward()": {
+					"returns": {
+						"_0": "reward"
+					}
+				},
+				"getStaker(address)": {
+					"params": {
+						"_userAddress": "The address of the user."
+					},
+					"returns": {
+						"_0": "amount The amount of tokens staked by the user.",
+						"_1": "stakerAddress The address of the user who staked the tokens."
+					}
+				},
+				"ownerDeposit(uint256)": {
+					"params": {
+						"_amount": "The amount of tokens to deposit"
+					}
+				},
+				"stake(uint256,uint256)": {
+					"params": {
+						"_amount": "The amount of tokens to stake",
+						"_duration": "The duration of the stake in years (1, 2, or 3)"
+					}
+				},
+				"unStake()": {
+					"details": "If the user unstakes before the duration, they will only get the staked amount If the user unstakes after the duration, they will get the staked amount plus the rewards"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"claimReward()": {
+					"notice": "Claim the rewards"
+				},
+				"getStaker(address)": {
+					"notice": "Get the staked amount and the address of the staker for a specific user."
+				},
+				"ownerDeposit(uint256)": {
+					"notice": "Allows the owner to deposit tokens to ensure liquidity"
+				},
+				"stake(uint256,uint256)": {
+					"notice": "Stake a certain amount of tokens for a certain duration"
+				},
+				"unStake()": {
+					"notice": "Unstake the tokens"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"IStaking.sol": "IStaking"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"IStaking.sol": {
+			"keccak256": "0xd4f47bd4774fb40d739e697141dcdd218e632f0f003e6dd59c271df963a62b4f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://94a0bb13c52d43f18fd8b57c90a4fdc8ade27f997751b6b6c6a5b03b2a651410",
+				"dweb:/ipfs/QmTxNGfVczRgtDmYj4r1MnuYqcqP9oP6LmjskAGSXQ5ENN"
+			]
+		}
+	},
+	"version": 1
+}

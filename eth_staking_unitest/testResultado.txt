@@ -1,0 +1,17 @@
+No files changed, compilation skipped
+
+Ran 6 tests for test/StakingTest.sol:StakingTest
+[PASS] testClaimingRewards() (gas: 167153)
+[PASS] testEarlyUnstaking() (gas: 145898)
+[PASS] testOwnerDeposit() (gas: 57294)
+[PASS] testStakingTokens() (gas: 161247)
+[PASS] testStakingTokens2Years() (gas: 161246)
+[PASS] testStakingTokens3Years() (gas: 161215)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 881.26µs (523.24µs CPU time)
+
+Ran 2 tests for test/Counter.t.sol:CounterTest
+[PASS] testFuzz_SetNumber(uint256) (runs: 256, μ: 31210, ~: 31288)
+[PASS] test_Increment() (gas: 31303)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 7.47ms (6.96ms CPU time)
+
+Ran 2 test suites in 8.88ms (8.35ms CPU time): 8 tests passed, 0 failed, 0 skipped (8 total tests)

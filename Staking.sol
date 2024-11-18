@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+/// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.26;
 
@@ -10,7 +10,7 @@ contract Staking is IStaking {
     address public owner; // Declare the owner variable
 
     constructor() {
-        address _tokenAddress = address(0xf02A102153DDf132032B7De5D19F43aA049052Dd); // Define the address
+        address _tokenAddress = address(0xd9145CCE52D386f254917e481eB44e9943F39138); // Define the address
         token = IERC20(_tokenAddress); // Assign the address to the token variable
         owner = msg.sender; // the deployer is the owner
     }
