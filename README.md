@@ -3,6 +3,27 @@ Eth Kipu Staking Contract
 
 Jorge Enrique Cabrera Curso Ashitaka 2024 Buenos Aires
 
+Publicado y verificado en Sepolia testnet
+Contract creator: 0x60b1D95b9DF21e19DdAf88Ef11B74Bc534C0a5CE 
+Contract Staking address : 0x047dFbADF22fDB2A835d92220c8cd923bb88Acf1
+Contract Token address: 0x6061f7e05999e57B2DA7A58b119b426B5CA9E76E
+
+Test:
+A los fines del test lo realicé con Foundry mediante forge test
+simulando un token (MockERC20) al efecto .
+
+Se adjuntan:
+IJER20.sol (Interface del Token)
+JERC20.sol (Token publicado en Sepolia)
+IStaking.sol (Interface de Contrato publicado en Sepolia)
+Staking.sol (Contrato publicado en Sepolia)
+
+StakingTest.sol (Archivo de test en foundry )
+testResultado.txt (Resultados del test pasados)
+readme.md (Este archivo)
+
+Especificaciones del ejercicio:
+
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
